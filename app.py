@@ -31,38 +31,7 @@ def home():
 # CONTACT FORM
 # ==========================
 
-@app.route("/send", methods=["POST"])
-def send():
 
-    try:
-
-        name = request.form.get("name")
-        email = request.form.get("email")
-        message = request.form.get("message")
-
-        print("FORM DATA RECEIVED")
-
-        msg = Message(
-            subject=f"New Portfolio Inquiry from {name}",
-            sender=app.config['MAIL_USERNAME'],
-            recipients=['himan.bhat10@gmail.com']
-        )
-
-        msg.body = f"""
-Name: {name}
-
-Email: {email}
-
-Message:
-{message}
-"""
-
-        mail.send(msg)
-
-        return redirect("/")
-
-    except Exception as e:
-        return str(e)
 
 # ==========================
 
