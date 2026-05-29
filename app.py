@@ -34,34 +34,35 @@ def home():
 @app.route("/send", methods=["POST"])
 def send():
 
-    name = request.form.get("name")
-    email = request.form.get("email")
-    message = request.form.get("message")
+    try:
 
-    msg = Message(
+        name = request.form.get("name")
+        email = request.form.get("email")
+        message = request.form.get("message")
 
-        subject=f"New Portfolio Inquiry from {name}",
+        print("FORM DATA RECEIVED")
 
-        sender=app.config['MAIL_USERNAME'],
+        msg = Message(
+            subject=f"New Portfolio Inquiry from {name}",
+            sender=app.config['MAIL_USERNAME'],
+            recipients=['himan.bhat10@gmail.com']
+        )
 
-        recipients=['himan.bhat10@gmail.com']
-
-    )
-
-    msg.body = f"""
-
+        msg.body = f"""
 Name: {name}
 
 Email: {email}
 
 Message:
 {message}
-
 """
 
-    mail.send(msg)
+        mail.send(msg)
 
-    return redirect("/")
+        return redirect("/")
+
+    except Exception as e:
+        return str(e)
 
 # ==========================
 
