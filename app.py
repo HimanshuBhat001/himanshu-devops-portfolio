@@ -66,7 +66,7 @@ Message:
 # ==========================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run
 
 @app.route("/send", methods=["POST"])
 def send():
