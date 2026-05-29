@@ -1,0 +1,17 @@
+:root{
+
+    --bg-primary: #050816;
+
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+
+    --neon-cyan: #22d3ee;
+    --neon-purple: #8b5cf6;
+
+    --glow-blue:
+        0 0 20px rgba(34,211,238,0.5);
+
+    --glow-purple:
+        0 0 20px rgba(139,92,246,0.5);
+
+}

@@ -1,0 +1,468 @@
+@import url('variables.css');
+@import url('navbar.css');
+@import url('hero.css');
+@import url('animations.css');
+@import url('responsive.css');
+@import url('cursor.css');
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* GLOBAL CONTAINER */
+
+.container{
+    width: 90%;
+    max-width: var(--container-width);
+    margin: auto;
+}
+
+/* GLOBAL SECTION */
+
+section{
+    padding: 100px 0;
+    position: relative;
+}
+
+/* HEADINGS */
+
+.section-title{
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* GLASS EFFECT */
+
+.glass{
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: var(--border-glass);
+    border-radius: 20px;
+}
+
+.background-glow::before{
+    content: '';
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background: radial-gradient(
+        circle,
+        rgba(139,92,246,0.2),
+        transparent 70%
+    );
+
+    top: 300px;
+    left: -150px;
+
+    filter: blur(100px);
+}
+
+/* PREMIUM HOVER LIGHT */
+
+.glass::before{
+
+    content: '';
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.08),
+        transparent 70%
+    );
+
+    top: -100px;
+    left: -100px;
+
+    transition: 0.5s ease;
+
+    opacity: 0;
+}
+
+.glass:hover::before{
+    opacity: 1;
+}
+
+/* SECTION AMBIENT LIGHT */
+
+.skills::before{
+
+    content: '';
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: radial-gradient(
+        circle,
+        rgba(34,211,238,0.15),
+        transparent 70%
+    );
+
+    top: 50px;
+    right: -100px;
+
+    filter: blur(100px);
+
+    z-index: -1;
+}
+
+/* LOADER */
+
+.loader{
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #050816;
+
+    z-index: 100000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    transition: 1s ease;
+}
+
+/* CONTENT */
+
+.loader-content{
+
+    text-align: center;
+}
+
+/* TITLE */
+
+.loader-content h1{
+
+    font-size: 4rem;
+
+    font-family: 'Orbitron', sans-serif;
+
+    color: var(--neon-cyan);
+
+    margin-bottom: 30px;
+
+    letter-spacing: 5px;
+}
+
+/* BAR */
+
+.loader-bar{
+
+    width: 300px;
+    height: 6px;
+
+    background: rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+/* PROGRESS */
+
+.loader-progress{
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--neon-cyan),
+        var(--neon-purple)
+    );
+
+    animation: loading 2s ease forwards;
+}
+
+/* KEYFRAMES */
+
+@keyframes loading{
+
+    to{
+        width: 100%;
+    }
+
+}
+
+/* SECTION DIVIDER */
+
+section::after{
+
+    content: '';
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+}
+
+/* GLOBAL CARD HOVER */
+
+.skill-card,
+.project-card,
+.timeline-content,
+.cert-card,
+.contact-info,
+.contact-form{
+
+    transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.timeline-content:hover,
+.cert-card:hover,
+.contact-info:hover,
+.contact-form:hover{
+
+    box-shadow:
+    0 10px 40px rgba(34,211,238,0.15);
+
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar{
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background: #050816;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background: linear-gradient(
+        var(--neon-cyan),
+        var(--neon-purple)
+    );
+
+    border-radius: 20px;
+}
+
+/* PAGE FADE */
+
+body{
+
+    animation: pageFade 1s ease;
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* =========================
+   TERMINAL INTRO
+========================= */
+
+.terminal-intro{
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #050816;
+
+    z-index: 999999;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    transition: 1s ease;
+}
+
+/* WINDOW */
+
+.terminal-window{
+
+    width: 700px;
+
+    max-width: 90%;
+
+    background: #0b1120;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* HEADER */
+
+.terminal-header{
+
+    height: 50px;
+
+    background: rgba(255,255,255,0.04);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 20px;
+}
+
+/* DOTS */
+
+.dot{
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+}
+
+.red{
+    background: #ff5f57;
+}
+
+.yellow{
+    background: #febc2e;
+}
+
+.green{
+    background: #28c840;
+}
+
+/* BODY */
+
+.terminal-body{
+
+    padding: 40px;
+
+    font-family: monospace;
+
+    font-size: 1rem;
+
+    color: #22d3ee;
+
+    line-height: 2.2;
+}
+
+/* TERMINAL LINES */
+
+.terminal-line{
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    animation:
+    terminalReveal 0.5s ease forwards;
+}
+
+/* DELAYS */
+
+.terminal-line:nth-child(1){
+    animation-delay: 0.5s;
+}
+
+.terminal-line:nth-child(2){
+    animation-delay: 1.2s;
+}
+
+.terminal-line:nth-child(3){
+    animation-delay: 1.9s;
+}
+
+.terminal-line:nth-child(4){
+    animation-delay: 2.6s;
+}
+
+.terminal-line:nth-child(5){
+    animation-delay: 3.3s;
+}
+
+/* SUCCESS */
+
+.success{
+
+    color: #38ef7d;
+}
+
+/* ANIMATION */
+
+@keyframes terminalReveal{
+
+    to{
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}

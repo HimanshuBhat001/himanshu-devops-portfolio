@@ -1,0 +1,127 @@
+/* ABOUT SECTION */
+
+.about{
+    position: relative;
+}
+
+/* WRAPPER */
+
+.about-wrapper{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    margin-top: 60px;
+}
+
+/* LEFT */
+
+.about-left{
+    padding: 40px;
+}
+
+.about-left h3{
+    font-size: 2rem;
+
+    margin-bottom: 25px;
+
+    color: var(--neon-cyan);
+}
+
+.about-left p{
+    line-height: 1.9;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 20px;
+}
+
+/* RIGHT */
+
+.about-right{
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+/* TIMELINE CARD */
+
+.timeline-card{
+    padding: 30px;
+
+    transition: 0.4s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.timeline-card:hover{
+    transform: translateY(-10px);
+
+    box-shadow: var(--glow-purple);
+}
+
+.timeline-card span{
+    color: var(--neon-cyan);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 1px;
+}
+
+.timeline-card h4{
+    margin: 15px 0;
+
+    font-size: 1.3rem;
+}
+
+.timeline-card p{
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+}
+
+/* TECH STACK */
+
+.tech-stack{
+    margin-top: 80px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+/* TECH ITEM */
+
+.tech-item{
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s ease;
+
+    cursor: pointer;
+}
+
+.tech-item:hover{
+
+    transform: translateY(-5px);
+
+    background: rgba(34,211,238,0.1);
+
+    border-color: var(--neon-cyan);
+
+    box-shadow: var(--glow-blue);
+
+}
